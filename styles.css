@@ -1,0 +1,50 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;   
+}
+
+.site-name{
+    font-size: 60px;
+    position: relative;
+    left: 14px;
+    top: -97px;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(rgba(47,150,163,0.75),rgb(48,62,143,0.75));
+    color: white;
+}
+
+
+.location,.temp{
+    height: 20vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.temp{
+    flex-direction: column;
+}
+
+.temp-sec{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sym{
+    margin: 10px;
+    font-size: 20px;
+}
+
+.temp-sec h2{
+    font-size: 40px; 
+}
