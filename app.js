@@ -7,11 +7,11 @@ window.addEventListener('load',()=>{
     let tempsec = document.querySelector(".temp-sec");
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position=>{
-            long=position.coords.longitude;
-            lat=position.coords.latitude;
-            let proxy="https://cors-anywhere.herokuapp.com/";
-            let api= `${proxy}https://api.darksky.net/forecast/e6e8e2aea1121aa3641b125a4438351b/${lat},${long}`;
-            let loactionapi=`${proxy}https://www.googleapis.com/geolocation/v1/geolocate?key=`;
+            long = position.coords.longitude;
+            lat = position.coords.latitude;
+            let proxy = "https://cors-anywhere.herokuapp.com/";
+            let api = `${proxy}https://api.darksky.net/forecast/e6e8e2aea1121aa3641b125a4438351b/${lat},${long}`;
+            let loactionapi =`${proxy}https://www.googleapis.com/geolocation/v1/geolocate?key=`;
             fetch(api)
                 .then(res=>{
                     return res.json();
@@ -21,18 +21,18 @@ window.addEventListener('load',()=>{
                     locationplace.textContent = data.timezone;
                     tempdesc.textContent = data.currently.summary;
                     setIcon(data.currently.icon,document.querySelector(".icon"));
-                    let result =(data.currently.temperature-32)*(5/9);
+                    let result = (data.currently.temperature-32)*(5/9);
                     console.log(fc);
                     tempsec.addEventListener("click",()=>{
-                        if(fc.textContent==="F")
+                        if(fc.textContent === "F")
                         {
-                            fc.textContent="°C";
-                            temp.textContent=Math.floor(result);
+                            fc.textContent = "°C";
+                            temp.textContent = Math.floor(result);
                         }
                         else
                         {
-                            fc.textContent="F";
-                            temp.textContent= data.currently.temperature;
+                            fc.textContent = "F";
+                            temp.textContent = data.currently.temperature;
                         }
                     })
                 })
