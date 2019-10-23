@@ -11,6 +11,7 @@ window.addEventListener('load',()=>{
             lat=position.coords.latitude;
             let proxy="https://cors-anywhere.herokuapp.com/";
             let api= `${proxy}https://api.darksky.net/forecast/e6e8e2aea1121aa3641b125a4438351b/${lat},${long}`;
+            let loactionapi=`${proxy}https://www.googleapis.com/geolocation/v1/geolocate?key=`;
             fetch(api)
                 .then(res=>{
                     return res.json();
@@ -25,7 +26,7 @@ window.addEventListener('load',()=>{
                     tempsec.addEventListener("click",()=>{
                         if(fc.textContent==="F")
                         {
-                            fc.textContent="C";
+                            fc.textContent="°C";
                             temp.textContent=Math.floor(result);
                         }
                         else
