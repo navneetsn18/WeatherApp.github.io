@@ -1,12 +1,4 @@
-window.addEventListener('load',()=>{
-    let long,lat;
-    let temp = document.querySelector(".temp-degree");
-    let tempdesc = document.querySelector(".temp-desc");
-    let locationplace = document.querySelector(".location-place");
-    let fc = document.querySelector(".sym");
-    let tempsec = document.querySelector(".temp-sec");
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(plet tempsec = document.querySelector(".temp-sec");
+let tempsec = document.querySelector(".temp-sec");
 let clock = document.querySelector(".clock");
 let date = document.querySelector(".date");
 setInterval(displayclock,500);
@@ -80,42 +72,6 @@ window.addEventListener('load',()=>{
                 })
                 .then(data=>{
                     temp.textContent = data.currently.temperature;
-                    tempdesc.textContent = data.currently.summary;
-                    setIcon(data.currently.icon,document.querySelector(".icon"));
-                    let result = (data.currently.temperature-32)*(5/9);
-                    tempsec.addEventListener("click",()=>{
-                        if(fc.textContent === "F")
-                        {
-                            fc.textContent = "°C";
-                            temp.textContent = Math.floor(result);
-                        }
-                        else
-                        {
-                            fc.textContent = "F";
-                            temp.textContent = data.currently.temperature;
-                        }
-                    })
-                })
-        })
-    }
-    function setIcon(icon,iconID){
-        let skycons = new Skycons({color:"white"});
-        let currenticon = icon.replace(/-/g,"_").toUpperCase();
-        skycons.play();
-        return skycons.set(iconID,Skycons[currenticon]);
-    }
-});osition=>{
-            long = position.coords.longitude;
-            lat = position.coords.latitude;
-            let proxy = "https://cors-anywhere.herokuapp.com/";
-            let api = `${proxy}https://api.darksky.net/forecast/211d05599f1d5e0dedaf31b11cde5430/${lat},${long}`;
-            fetch(api)
-                .then(res=>{
-                    return res.json();
-                })
-                .then(data=>{
-                    temp.textContent = data.currently.temperature;
-                    //locationplace.textContent = data.timezone;
                     tempdesc.textContent = data.currently.summary;
                     setIcon(data.currently.icon,document.querySelector(".icon"));
                     let result = (data.currently.temperature-32)*(5/9);
