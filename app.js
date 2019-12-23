@@ -58,7 +58,6 @@ window.addEventListener('load',()=>{
     let long,lat;
     let temp = document.querySelector(".temp-degree");
     let tempdesc = document.querySelector(".temp-desc");
-    let locationplace = document.querySelector(".location-place");
     let fc = document.querySelector(".sym");
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position=>{
