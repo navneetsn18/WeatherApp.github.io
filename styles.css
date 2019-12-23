@@ -20,7 +20,20 @@ body{
     background: linear-gradient(rgba(47,150,163,0.75),rgb(48,62,143,0.75));
     color: white;
 }
-
+.date,.clock{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.date{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+.clock{
+    position: absolute;
+    top: 36px;
+    right: 16px;
+}
 
 .location,.temp{
     height: 20vh;
