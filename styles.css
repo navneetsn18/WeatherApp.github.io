@@ -48,3 +48,9 @@ body{
 .temp-sec h2{
     font-size: 40px; 
 }
+
+footer{
+    position: absolute;
+    height: 25px;
+    bottom: 0;
+}
