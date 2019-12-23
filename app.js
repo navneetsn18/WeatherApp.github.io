@@ -70,20 +70,22 @@ window.addEventListener('load',()=>{
                     return res.json();
                 })
                 .then(data=>{
-                    temp.textContent = data.currently.temperature;
+                    let resultF = data.currently.temperature;
+                    let result = (data.currently.temperature-32)*(5/9);
+                    let resultC = Math.floor(result);
+                    temp.textContent = resultC;
                     tempdesc.textContent = data.currently.summary;
                     setIcon(data.currently.icon,document.querySelector(".icon"));
-                    let result = (data.currently.temperature-32)*(5/9);
                     tempsec.addEventListener("click",()=>{
                         if(fc.textContent === "F")
                         {
                             fc.textContent = "°C";
-                            temp.textContent = Math.floor(result);
+                            temp.textContent = resultC;
                         }
                         else
                         {
                             fc.textContent = "F";
-                            temp.textContent = data.currently.temperature;
+                            temp.textContent = resultF;
                         }
                     })
                 })
