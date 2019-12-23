@@ -18,7 +18,6 @@ window.addEventListener('load',()=>{
                 })
                 .then(data=>{
                     temp.textContent = data.currently.temperature;
-                    locationplace.textContent = data.timezone;
                     tempdesc.textContent = data.currently.summary;
                     setIcon(data.currently.icon,document.querySelector(".icon"));
                     let result = (data.currently.temperature-32)*(5/9);
