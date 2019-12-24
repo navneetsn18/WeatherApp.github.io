@@ -73,7 +73,7 @@ window.addEventListener('load',()=>{
                     let resultF = data.currently.temperature;
                     let result = (data.currently.temperature-32)*(5/9);
                     let resultC = Math.floor(result);
-                    fc = "°C";
+                    fc.textContent = "°C";
                     temp.textContent = resultC + " "+ fc;
                     tempdesc.textContent = data.currently.summary;
                     setIcon(data.currently.icon,document.querySelector(".icon"));
