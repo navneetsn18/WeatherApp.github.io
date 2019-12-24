@@ -74,7 +74,7 @@ window.addEventListener('load',()=>{
                     let result = (data.currently.temperature-32)*(5/9);
                     let resultC = Math.floor(result);
                     fc.textContent = "°C";
-                    temp.textContent = resultC + " "+ fc;
+                    temp.textContent = resultC;
                     tempdesc.textContent = data.currently.summary;
                     setIcon(data.currently.icon,document.querySelector(".icon"));
                     tempsec.addEventListener("click",()=>{
