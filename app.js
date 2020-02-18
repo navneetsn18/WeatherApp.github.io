@@ -10,6 +10,7 @@ function displayclock(){
     var en = 'AM';
     var curdate = time.getUTCDate();
     var month = time.getUTCMonth();
+    month+=1;
     var year = time.getFullYear();
     var day = time.getUTCDay();
     if(hrs>12){
@@ -51,7 +52,7 @@ function displayclock(){
     if(day == '6'){
         day = "Sat";
     }
-    date.textContent = day + " ," + curdate + "/" + month+1 + "/" + year;
+    date.textContent = day + " ," + curdate + "/" + month + "/" + year;
     clock.textContent = hrs + ":" + min + ":" + sec + " " + en;
 }
 window.addEventListener('load',()=>{
