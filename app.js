@@ -51,7 +51,7 @@ function displayclock(){
     if(day == '6'){
         day = "Sat";
     }
-    date.textContent = day + " ," + curdate + "/" + month + "/" + year;
+    date.textContent = day + " ," + curdate + "/" + month+1 + "/" + year;
     clock.textContent = hrs + ":" + min + ":" + sec + " " + en;
 }
 window.addEventListener('load',()=>{
